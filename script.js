@@ -41,8 +41,10 @@ guessButton.addEventListener('click', function () {
   var maxInputBox = document.querySelector('.max-range');
 
   lastGuess.innerText = parseInt(guessInput.value, 10);
-  pickANumber.innerText = 'Your last guess was...';
-
+  pickANumber.innerText = "Your last guess was...";
+  if (isNaN(storedNumber)) {
+    rightOrWrong.innerText = "You haven't picked a range yet. Please pick a range and try again."
+  }
   if (isNaN(theGuess)) {
     rightOrWrong.innerText = "That's not a number. Try again.";
     lastGuess.innerText = "Not a number."
