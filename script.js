@@ -70,6 +70,8 @@ guessButton.addEventListener('click', function () {
   pickANumber.innerText = 'Nailed it.'
   randomNumberGenerator(userMin, userMax);
   rangeButton.disabled = true;
+  document.querySelector('.min-range').readOnly = true;
+  document.querySelector('.max-range').readOnly = true;
 
 };
 });
