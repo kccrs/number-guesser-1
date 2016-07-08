@@ -11,7 +11,7 @@ function randomNumberGenerator(min, max) {
   var num = Math.floor(Math.random() * (max - min + 1)) + min;
   storedNumber = num;
   return num;
-};
+}
 
 //Range button stuff.
 
