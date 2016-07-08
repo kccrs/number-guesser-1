@@ -25,6 +25,10 @@ rangeButton.addEventListener('click', function(){
     resetButton.disabled = false;
     guessButton.disabled = false;
   }
+  if (userMin > userMax) {
+    guessButton.disabled = true;
+    pickANumber.innerText = 'That is not an acceptable range.';
+  }
 });
 
 //guess button stuff
