@@ -11,7 +11,7 @@ var rangeButton = document.querySelector('.range-button');
 
 var userMin;
 var userMax;
-// var randomNumber;
+var randomNumber;
 var theGuess;
 var minInputBox;
 var maxInputBox;
@@ -71,20 +71,7 @@ guessButton.addEventListener('click', function () {
     lastGuess.innerText = "Definitely not a number."
   }
 
-  if (theGuess === randomNumber) {
-  guessInput.value = '';
-  clearButton.disabled = true;
-  rightOrWrong.innerText = 'Now try again, with more numbers to guess from.';
-  userMin = userMin - 10;
-  userMax = userMax + 10;
-  minInputBox.value = userMin;
-  maxInputBox.value = userMax;
-  pickANumber.innerText = 'Nailed it.'
-  randomNumberGenerator(userMin, userMax);
-  rangeButton.disabled = true;
-  document.querySelector('.min-range').readOnly = true;
-  document.querySelector('.max-range').readOnly = true;
-  };
+
 
   if (theGuess < randomNumber) {
   rightOrWrong.innerText = 'Sorry that guess is too low. Pick a higher number.';
@@ -97,6 +84,21 @@ guessButton.addEventListener('click', function () {
   if (theGuess < userMin || theGuess > userMax) {
     rightOrWrong.innerText = "That number is outside of the acceptable range. Try again."
   }
+
+  if (theGuess === randomNumber) {
+  guessInput.value = '';
+  clearButton.disabled = true;
+  rightOrWrong.innerText = 'Now try again, with more numbers to guess from.';
+  userMin = userMin - 10;
+  userMax = userMax + 10;
+  minInputBox.value = userMin;
+  maxInputBox.value = userMax;
+  pickANumber.innerText = 'Nailed it.'
+  randomNumber = randomNumberGenerator(userMin, userMax);
+  rangeButton.disabled = true;
+  document.querySelector('.min-range').readOnly = true;
+  document.querySelector('.max-range').readOnly = true;
+  };
 });
 
 

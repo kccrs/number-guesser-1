@@ -1,4 +1,67 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
-  width: 600px;
+  background-image: url(blue-background.jpg);
+}
+
+h1 {
+  max-width: 300px;
+  margin:  50px auto;
+  background: darkblue;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  border: 2px solid blue;
+}
+
+.pick-a-number,
+.last-guess,
+.right-or-wrong {
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 24px;
+  padding: 5px;
+}
+
+.range {
+  border: 2px solid blue;
+  padding: 10px;
+  max-width: 550px;
+  margin: auto;
+}
+
+.min-range,
+.max-range,
+.number-guess {
+  height: 25px;
+  width: 150px;
+}
+
+.min-range,
+.max-range,
+.number-guess,
+button {
+  margin-left: 30px;
+}
+
+button {
+  height: 30px;
+  background: darkblue;
+  font-weight: bold;;
+  border-radius: 10px;
+  margin-top: 10px;
+  color: white;
+}
+
+.controls {
+  max-width: 550px;
   margin: auto;
 }
